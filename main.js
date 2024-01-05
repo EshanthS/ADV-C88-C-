@@ -1,4 +1,4 @@
-var canvas = new fabric.Canvas ('myCanvas');
+var canvas = new fabric.Canvas('myCanvas');
 
 player_x = 15;
 player_y = 15;
@@ -114,4 +114,41 @@ function my_keydown(e){
         console.log("c");
        }
     
+}
+
+function up(){
+    if (player_y >= 0){
+        player_y = player_y - block_image_height;
+        console.log("block image height = "+ block_image_object);
+        console.log("player y corrdinates ="+ player_y+"player x coordinates = "+player_x);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+function down(){
+    if (player_y <= 500){
+        player_y = player_y + block_image_height;
+        console.log("block image height = "+ block_image_object);
+        console.log("player y corrdinates ="+ player_y+"player x coordinates = "+player_x);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+function left(){
+    if (player_x >= 0){
+        player_x= player_x - block_image_width;
+        console.log("block image width = "+ block_image_width);
+        console.log("player x coordinates ="+player_x+"player x coordinates = "+ player_x);
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+function right(){
+    if (player_x <= 850){
+        player_x= player_x + block_image_width;
+        console.log("block image width = "+ block_image_width);
+        console.log("player x coordinates ="+player_x+"player x coordinates = "+ player_x);
+        canvas.remove(player_object);
+        player_update();
+    }
 }
